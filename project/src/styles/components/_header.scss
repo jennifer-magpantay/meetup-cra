@@ -1,0 +1,21 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "../functions" as *;
+@use "../responsive" as *;
+
+header {
+  width: 100%;
+  max-width: layoutColumn(8);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: gap(2);
+  margin: 0 auto;
+  background-color: $white;
+  border-bottom: 01px solid $gray-100;
+
+  @include for-tablet-landscape-up {
+    padding: gap(2) gap(8);
+  }
+}

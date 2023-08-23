@@ -1,0 +1,9 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "../functions" as *;
+@use "../responsive" as *;
+
+.logo {
+  font-size: $icon-small;
+  font-weight: $extra-bold;
+}

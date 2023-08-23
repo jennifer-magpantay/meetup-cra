@@ -1,0 +1,8 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "../functions" as *;
+@use "../responsive" as *;
+
+.title {
+  margin-bottom: gap(2);
+}

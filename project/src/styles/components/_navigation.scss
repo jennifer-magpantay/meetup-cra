@@ -1,0 +1,41 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "../functions" as *;
+@use "../responsive" as *;
+
+.navigation {
+  display: block;
+  margin-left: auto;
+  margin-right: gap(2);
+
+  &--list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: gap(2);
+
+    &-link {
+      a {
+        padding-bottom: gap(1);
+        margin-bottom: gap(1);
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &.active {
+          color: red;
+          //text-decoration: underline;
+          border-bottom: 02px solid red;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        a {
+          color: red;
+          //text-decoration: underline;
+          border-bottom: 02px solid red;
+        }
+      }
+    }
+  }
+}
