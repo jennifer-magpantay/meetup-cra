@@ -15,3 +15,12 @@
 @use "./headings";
 
 // COMPONENTS
+@use "./components/logo";
+@use "./components/header";
+@use "./components/navigation";
+@use "./components/main";
+@use "./components/title";
+@use "./components/form";
+@use "./components/button";
+@use "./components/meetup";
+@use "./components/footer";

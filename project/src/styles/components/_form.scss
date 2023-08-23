@@ -1,0 +1,36 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "../functions" as *;
+@use "../responsive" as *;
+
+form {
+  width: 100%;
+  padding: gap(4);
+  border: 01px solid $gray-300;
+  border-radius: $border-radius;
+
+  label,
+  input,
+  textarea {
+    width: 100%;
+    display: block;
+  }
+
+  label {
+    margin-bottom: gap(0.5);
+  }
+
+  textarea,
+  input {
+    padding: gap(1);
+    margin-bottom: gap(2);
+  }
+
+  input {
+    height: toRem(48);
+  }
+
+  textarea {
+    resize: none;
+  }
+}

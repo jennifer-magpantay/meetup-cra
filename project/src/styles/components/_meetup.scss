@@ -1,0 +1,41 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "../functions" as *;
+@use "../responsive" as *;
+
+.meetup {
+  width: 100%;
+  padding: gap(2);
+
+  border: 01px solid $gray-200;
+  border-radius: $border-radius;
+
+  &--header {
+    margin-bottom: gap(1);
+
+    &-title {
+      font-weight: bold;
+    }
+  }
+
+  &--body {
+    margin-bottom: gap(1);
+
+    &-desc {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  &--footer {
+    margin-bottom: gap(1);
+    
+    button {
+      display: block;
+      margin-left: auto;
+    }
+  }
+}

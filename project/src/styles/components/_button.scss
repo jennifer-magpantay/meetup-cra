@@ -1,0 +1,39 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "../functions" as *;
+@use "../responsive" as *;
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  padding: toRem(8) toRem(24);
+  border: 02px solid transparent;
+  border-radius: $border-radius;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+
+  &:not(:disabled):hover {
+    cursor: pointer;
+  }
+
+  &.cta {
+    background-color: $primary-color-dk;
+    // border-radius: 50px;
+    color: $white;
+    letter-spacing: 1px;
+
+    &:hover,
+    &:focus {
+      outline-color: $primary-color-dk;
+    }
+  }
+
+  &.disabled {
+    background-color: $gray-200;
+    pointer-events: none;
+  }
+}
