@@ -6,9 +6,25 @@
 .meetup {
   width: 100%;
   padding: gap(2);
-
+  margin: gap(4) auto;
   border: 01px solid $gray-200;
   border-radius: $border-radius;
+
+  @include for-tablet-portrait-up {
+    max-width: layoutColumn(10);
+  }
+
+  @include for-tablet-up {
+    max-width: layoutColumn(9);
+  }
+
+  @include for-desktop-up {
+    max-width: layoutColumn(8);
+  }
+
+  @include for-medium-desktop-up {
+    max-width: layoutColumn(7);
+  }
 
   &--header {
     margin-bottom: gap(1);
@@ -32,7 +48,7 @@
 
   &--footer {
     margin-bottom: gap(1);
-    
+
     button {
       display: block;
       margin-left: auto;
