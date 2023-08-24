@@ -5,6 +5,17 @@ import { Layout } from "../components/Layout";
 import { Title } from "../components/Title";
 import { Meetup } from "../components/Meetup";
 
+/**
+ * 
+ * TODO:
+ * - set Home content
+ * - limit events on home for 4, then add link to meetups page
+ * - add menu on mobile
+ * - add routing to open a meetup detailed page
+ * - add more info to meetups: organizer info, date and time
+ * - style error page
+ */
+
 export const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [meetups, setMeetups] = useState([]);
