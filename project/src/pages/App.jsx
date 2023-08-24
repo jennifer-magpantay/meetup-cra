@@ -49,6 +49,7 @@ export const App = () => {
                 <li key={id}>
                   <Meetup
                     variant="preview"
+                    id={id}
                     title={title}
                     image={image}
                     description={description}
