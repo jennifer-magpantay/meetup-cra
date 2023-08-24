@@ -1,3 +1,9 @@
+import { Link } from "react-router-dom";
+
 export const Logo = () => {
-  return <h1 className="logo">happynings</h1>;
+  return (
+    <Link to="/" className="logo">
+      <h1>happynings</h1>
+    </Link>
+  );
 };
