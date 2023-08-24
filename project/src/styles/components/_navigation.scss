@@ -18,6 +18,7 @@
       gap: gap(2);
 
       &-link {
+        font-weight: bold;
         a {
           padding-bottom: gap(1);
           margin-bottom: gap(1);
@@ -37,6 +38,22 @@
             color: red;
             //text-decoration: underline;
             border-bottom: 02px solid red;
+          }
+        }
+
+        &.count {
+          &::after {
+            //content: "1";
+            content: attr(data-count);
+            width: 20px;
+            aspect-ratio: 1 / 1;
+            margin-left: gap(0.5);
+            padding: gap(0.5) gap(1);
+            background-color: $gray-200;
+            border-radius: 50px;
+            color: $gray-800;
+            font-size: toRem(12);
+            font-weight: $bold;
           }
         }
       }

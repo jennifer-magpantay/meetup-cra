@@ -10,7 +10,6 @@ main {
   flex-grow: 1;
   padding: gap(4);
   margin: 0 auto;
-  background-color: $white;
 
   @include for-tablet-landscape-up {
     max-width: layoutColumn(8);

@@ -5,8 +5,9 @@
 
 .meetup {
   width: 100%;
-  padding: gap(2);
+  padding: gap(2) gap(4);
   margin: gap(4) auto;
+  background-color: $white;
   border: 01px solid $gray-200;
   border-radius: $border-radius;
 
@@ -37,21 +38,39 @@
   &--body {
     margin-bottom: gap(1);
 
-    &-desc {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      margin-bottom: gap(1);
+    }
+
+    &-description {
+      margin: gap(2) 0 gap(1);
+
+      &.preview {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
     }
   }
 
   &--footer {
-    margin-bottom: gap(1);
+    margin: gap(1) 0;
 
-    button {
-      display: block;
+    &-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: gap(1);
+      margin-top: gap(2);
       margin-left: auto;
+      padding: gap(1) gap(3);
+      border-radius: $border-radius;
+      border: 01px solid $gray-200;
     }
   }
 }

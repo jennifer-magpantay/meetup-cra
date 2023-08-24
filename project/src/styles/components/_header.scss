@@ -11,11 +11,9 @@ header {
   justify-content: space-between;
   padding: gap(2);
   margin: 0 auto;
-  background-color: $white;
-  border-bottom: 01px solid $gray-100;
+  border-bottom: 01px solid $gray-200;
 
   @include for-tablet-landscape-up {
-    //padding: gap(2) gap(8);
     max-width: layoutColumn(8);
   }
 }
