@@ -1,7 +1,18 @@
+import { useContext } from "react";
+import { FavouritesContext } from "../store/context";
+
 import { validUrl } from "../services/validUrl";
 
-export const Meetup = ({ title, description, address, image, variant }) => {
+export const Meetup = ({ id, title, description, address, image, variant }) => {
+  const context = useContext(FavouritesContext);
+  const isFavourite = context.isFavourite(id);
   // variant: "preview" || "detailed"
+
+  const handleFavouriteToggle = (id) => {
+    isFavourite
+      ? context.removeFavourite(id)
+      : context.addFavourite({ id, title, description, address, image });
+  };
 
   const renderImage = (image) => {
     const isValid = validUrl(image);
@@ -23,7 +34,9 @@ export const Meetup = ({ title, description, address, image, variant }) => {
         {variant === "detailed" && <address>{address}</address>}
       </div>
       <div className="meetup--footer">
-        <button>Add to favourites</button>
+        <button onClick={() => handleFavouriteToggle(id)}>
+          {isFavourite ? "Remove from favourites" : "Add to favourites"}
+        </button>
       </div>
     </div>
   );
