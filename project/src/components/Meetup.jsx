@@ -3,10 +3,16 @@ import { FavouritesContext } from "../store/context";
 
 import { validUrl } from "../services/validUrl";
 
+import { Heart } from "@phosphor-icons/react";
+
 export const Meetup = ({ id, title, description, address, image, variant }) => {
   const context = useContext(FavouritesContext);
   const isFavourite = context.isFavourite(id);
   // variant: "preview" || "detailed"
+  const descriptionClass = [
+    "meetup--body-description",
+    variant === "preview" ? variant : "",
+  ].join(" ");
 
   const handleFavouriteToggle = (id) => {
     isFavourite
@@ -29,13 +35,31 @@ export const Meetup = ({ id, title, description, address, image, variant }) => {
         <h3 className="meetup--header-title">{title}</h3>
       </div>
       <div className="meetup--body">
-        <img src={renderImage(image)} alt="" />
-        <p className="meetup--body-description">{description}</p>
+        <img className="meetup--body-image" src={renderImage(image)} alt="" />
+        <p className={descriptionClass}>{description}</p>
         {variant === "detailed" && <address>{address}</address>}
       </div>
       <div className="meetup--footer">
-        <button onClick={() => handleFavouriteToggle(id)}>
-          {isFavourite ? "Remove from favourites" : "Add to favourites"}
+        <button
+          className="meetup--footer-button"
+          onClick={() => handleFavouriteToggle(id)}
+        >
+          {isFavourite ? (
+            <>
+              <span>Remove from favourites</span>
+              <Heart
+                size={20}
+                color="#f85454"
+                weight="fill"
+                aria-hidden={true}
+              />
+            </>
+          ) : (
+            <>
+              <span>Add to favourites</span>
+              <Heart size={20} aria-hidden={true} />
+            </>
+          )}
         </button>
       </div>
     </div>
